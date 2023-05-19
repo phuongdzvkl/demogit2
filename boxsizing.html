@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            /* trong trường hợp dùng box-sizing
+            để không bị khoảng đệm của padding: lam ảnh hưởng
+            ví dụ box trên được khai báo 100px x 100px thêm
+            padding 10px thì box sẽ đệm thêm mỗi bên 20px
+            do đó tăng lên 120px x 120px để giải quyết việc này
+            ta dùng box-sizing: với thuộc tính border-box sẽ
+            hệ thống sẽ tự giảm width với height sao cho + thêm
+            padding = đúng giá trị gốc ví dụ giá trị gốc 100 thêm 
+            padding: là 120 hệ thống sẽ giảm đi 20px của elemnt và 
+            + thêm padding bằng giá trị gốc*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box"> 
+        day la noi dung viet
+    </dđiv>
+</body>
+</html>

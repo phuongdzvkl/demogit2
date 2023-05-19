@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: violet;
+            position: relative;
+
+        }
+
+        h3 {
+            border: 1px solid red;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            /*transform: dung de dinh vi 
+                                         chinh ban than the ma da select
+                                         như trên -50% là lui lại 1 nửa của kích
+                                         thước chiều ngang trục x, -50% tiếp 
+                                         theo là lùi lại 50% chiều dọc trục y*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h3>
+            center me
+        </h3>
+    </div>
+    <script>
+        import React from 'react';
+
+        class Button extends React.Component {
+            handleClick = () => {
+                console.log('Button clicked');
+            }
+
+            render() {
+                return (
+                    <button onClick={this.handleClick}>
+                        Click me
+                    </button>
+                );
+            }
+        }
+
+        export default Button;
+    </script>
+</body>
+
+</html>

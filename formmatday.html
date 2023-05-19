@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #282c34;
+            color: #fff;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form {
+            width: 500px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #1e1e1e;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .failform {
+            border: 3px solid red;
+        }
+
+        .input {
+            width: 95%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #000;
+        }
+
+        #submit {
+            width: 80px;
+            background-color: #008CBA;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            border: none;
+        }
+
+        #submit:hover {
+            background-color: #0077B5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <h2>LOGIN</h2>
+        <div class="form-group">
+            <label class="label" for="">User Name:</label>
+            <input type="text" class="input" id="user">
+        </div>
+        <div class="form-group">
+            <label class="label" for="">Password:</label>
+            <input type="password" class="input" id="password">
+        </div>
+        <div class="form-group">
+            <input type="button" value="Submit" class="input" id="submit">
+        </div>
+    </div>
+    <script>
+        const submutButton = document.querySelector('#submit');
+
+        function formValidate() {
+            function ruler(select, callBack) {
+                const Select = document.querySelector(select);
+                if (callBack(Select)) {
+                    Select.classList.remove('failform');
+                    return true;
+                }
+                Select.classList.add('failform');
+                return false;
+            }
+            // tên user phải từ 8 ký tự trở lên
+            const User = ruler('#user', function (select) {
+                return select.value.length > 7 ? true : false;
+            });
+             // pass phải đúng 6 ký tự
+            const Password = ruler('#password', function (select) {
+                return select.value.length != 6 ? false : true;
+            });
+            if (User && Password) {
+                return true;
+            }
+            return false;
+        }
+        let pixel = 0;
+        function mouseEnter() {
+            if (!formValidate()) {
+                pixel = pixel != 0 ? 0: 400;
+            } else {
+                pixel = 0;
+            }
+            submutButton.style.marginLeft = `${pixel}px`;
+        }
+        function checkForm() {
+
+            if (formValidate()) {   
+                alert('gui form thanh cong');
+            } else {
+                alert('gui form khong thanh cong');
+            }
+        }
+
+        submutButton.addEventListener('mouseenter', mouseEnter);
+        submutButton.addEventListener('click', checkForm);
+    </script>
+</body>
+
+</html>

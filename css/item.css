@@ -1,0 +1,23 @@
+.item{
+    text-align: center;
+    border: 0.1px solid gray;
+    width: 400px;
+}
+
+img{
+    width: 70%;
+    margin-bottom:10px;
+    border-radius: 10px;
+}
+.item-sp{
+}
+#btn{
+    margin-left: 30px;
+    height: 35px;
+}
+span{
+    font-size: 20px;
+}
+.infr-sp{
+    display: none;
+}
